@@ -11,7 +11,7 @@ async function loadURL() {
             iframe.srcdoc = html;
 
             // Extract and display MP3 links
-            extractMP3Links(html);
+            extractMP3Links(html, url);
         } catch (error) {
             alert('Failed to fetch the URL. Please check the URL and try again.');
         }
@@ -20,7 +20,7 @@ async function loadURL() {
     }
 }
 
-function extractMP3Links(html) {
+function extractMP3Links(html, baseUrl) {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
     const mp3Links = doc.querySelectorAll('a[href$=".mp3"]');
@@ -29,13 +29,26 @@ function extractMP3Links(html) {
 
     if (mp3Links.length > 0) {
         mp3Links.forEach(link => {
+            const mp3Url = new URL(link.getAttribute('href'), baseUrl).href;
             const li = document.createElement('li');
+
+            const audio = document.createElement('audio');
+            audio.controls = true;
+            audio.src = mp3Url;
+
             const a = document.createElement('a');
-            a.href = link.href;
-            a.textContent = link.href;
-            a.target = '_blank';
+            a.href = mp3Url;
+            a.textContent = 'Download';
+            a.download = mp3Url.split('/').pop();
+
+            li.appendChild(audio);
             li.appendChild(a);
             mp3ListDiv.querySelector('ul').appendChild(li);
+        });
+    } else {
+        mp3ListDiv.innerHTML += '<p>No MP3 files found.</p>';
+    }
+}
         });
     } else {
         mp3ListDiv.innerHTML += '<p>No MP3 files found.</p>';
