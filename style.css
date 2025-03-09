@@ -39,15 +39,20 @@ iframe {
 }
 #mp3List li {
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
 }
 #mp3List a {
     text-decoration: none;
     color: #007bff;
+    margin-left: 10px;
 }
 #mp3List a:hover {
     text-decoration: underline;
 }
-iframe {
+audio {
+    margin-right: 10px;
+}
     width: 100%;
     height: 80vh;
     border: 1px solid #ccc;
