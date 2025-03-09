@@ -40,18 +40,18 @@ iframe {
 #mp3List li {
     margin-bottom: 10px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
 }
 #mp3List a {
     text-decoration: none;
     color: #007bff;
-    margin-left: 10px;
+    margin-top: 10px;
 }
 #mp3List a:hover {
     text-decoration: underline;
 }
 audio {
-    margin-right: 10px;
+    margin-bottom: 10px;
 }
     width: 100%;
     height: 80vh;
