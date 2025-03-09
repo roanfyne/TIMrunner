@@ -43,6 +43,7 @@ function extractMP3Links(html, baseUrl) {
 
             li.appendChild(audio);
             li.appendChild(a);
+            li.innerHTML += `<a href="${mp3Url}" target="_blank">${mp3Url}</a>`;
             mp3ListDiv.querySelector('ul').appendChild(li);
         });
     } else {
