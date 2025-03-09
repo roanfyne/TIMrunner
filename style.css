@@ -38,17 +38,10 @@ iframe {
     padding: 0;
 }
 #mp3List li {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
-}
-#mp3List a {
-    text-decoration: none;
-    color: #007bff;
-    margin-top: 10px;
-}
-#mp3List a:hover {
-    text-decoration: underline;
+    align-items: flex-start;
 }
 audio {
     margin-bottom: 10px;
