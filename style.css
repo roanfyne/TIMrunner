@@ -29,3 +29,27 @@ iframe {
     border: 1px solid #ccc;
     margin-top: 20px;
 }
+#mp3List {
+    width: 100%;
+    margin-top: 20px;
+}
+#mp3List ul {
+    list-style-type: none;
+    padding: 0;
+}
+#mp3List li {
+    margin-bottom: 10px;
+}
+#mp3List a {
+    text-decoration: none;
+    color: #007bff;
+}
+#mp3List a:hover {
+    text-decoration: underline;
+}
+iframe {
+    width: 100%;
+    height: 80vh;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
